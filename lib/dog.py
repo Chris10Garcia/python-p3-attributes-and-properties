@@ -12,7 +12,7 @@ APPROVED_BREEDS = [
 ]
 
 class Dog:
-    def __init__ (self, name="", breed = ""):
+    def __init__ (self, name="test", breed = "Corgi"):
         self.name = name
         self.breed = breed
 
@@ -25,19 +25,17 @@ class Dog:
         else:
             self._name = name
 
-    # def set_breed (self, breed):
-    #     # if breed not in APPROVED_BREEDS:
-    #     #     print("Breed must be in list of approved breeds.")
-    #     # else:
-    #     #     self._breed = breed
-    #     print("Breed must be in list of approved breeds")
-    #     self._breed = breed
+    def set_breed (self, breed):
+        if bool(breed not in APPROVED_BREEDS) == True:
+            print("Breed must be in list of approved breeds.")
+        else:
+            self._breed = breed
 
     def get_breed (self):
         return self._breed
     
     name = property(get_name, set_name)
-    # breed = property(get_breed, set_breed)
+    breed = property(get_breed, set_breed)
 
     # def __init__(self, name="", breed=""):
     #     if breed in APPROVED_BREEDS:
@@ -69,3 +67,4 @@ class Dog:
 # cliff = Dog("hola")
 
 # print(cliff)
+
